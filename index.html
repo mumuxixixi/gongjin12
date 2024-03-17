@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <title>公瑾的小屋</title>
+
+    <style>
+        body{
+    /* 设置外边距 */
+    margin: 0%;
+    /* 内边距 */
+    padding: 0%;
+    /* 字体 */
+    font-family: 'Times New Roman', Times, serif;
+    /* 边框变粗 */
+    font-weight: bolder;
+    /* 映入背景图片 */
+    background: url(../images/剑来.png);
+    /* 水平居中 */
+    text-align: center;
+    /* 背景图片充满网页 */
+    background-size: cover;
+}
+.box{
+    /* 绝对定位 */
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    /* 让盒子水平居中 */
+    transform: translate(-50%,-50%);
+    width: 600px;
+    padding: 40px;
+    background: rgba(10, 9, 6, 0.5);
+    box-sizing: border-box;
+    /* 阴影部分 */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    /* 边框变圆 */
+    border-radius: 20px;
+};
+
+.box h1{
+    margin:0 0 30px;
+    padding: 0;
+    color: black;
+    text-align: center;
+};
+
+.box .inputbox{
+    /* 相对定位 */
+    position: relative;
+}
+
+.box .inputbox input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+    color: black;
+    margin-bottom: 30px;
+    /* 边框消失 */
+    border: none;
+    /* 定义底部边框并设置颜色 */
+    border-bottom: 1px solid #fff;
+    /* 点击时框也消失 */
+    outline: none;
+    /* 框内背景透明 */
+    background: transparent;
+}
+
+.box .inputbox label{
+    /* 绝对定位 */
+    position: absolute;
+
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    font-size: 16px;
+    /* 字体样式正常展示 */
+    font-style: normal;
+    color: blanchedalmond;
+    /* 可以看到这个元素，但是点击不了 */
+    pointer-events: none;
+    /* 过度会把加载变成0.5s内完成 */
+    transform: 0.5s;
+    text-align: center;
+};
+
+.box .inputbox input:focus ~ label,
+.box .inputbox input:valid ~ label{
+    top:-18px ;
+    left: 0;
+    color: black;
+    font-size: 12px;
+}
+
+.box input[type="submit"] {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    background: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+    </style>
+
+</head>
+
+<body>
+    <form class="box">
+        <h1>登录</h1>
+        <div class="inputbox">
+            <label for="user">账户</label>
+            <input type="text" id="username" placeholder="请输入账号" value="">
+        </div>
+        <div class="inputbox">
+            <label for="pwd">密码</label>
+            <input type="password" id="pwd" placeholder="密码(密码是你的生日！)" value="">
+        </div>
+
+        <div class="inputbox">
+            <input type="checkbox" id="chk" />我会记住你的
+            <span id="spa"></span>
+        </div>
+
+        <div class="inputbox">
+            <button id="denglu"><a id="tiaozhuan" href="##">登录</a></button>
+            <button id="quxiao">取消</button>
+        </div>
+    </form>
+
+    <script>
+        var chk = document.getElementById("chk");
+        var spa = document.getElementById("spa");
+        var btn1 = document.getElementById("denglu");
+        var btn2 = document.getElementById("quxiao");
+        var username = document.getElementById("username");
+        var pwd = document.getElementById("pwd");
+        var a = document.getElementById("tiaozhuan");
+        chk.onmouseout = function () {
+            spa.style.display = "none";
+        }
+        chk.onmouseover = function () {
+            spa.style.display = "block";
+        }
+        btn1.onclick = function () {
+            if (username.value == "" && pwd.value == "") {
+                alert("你在逗我玩吗");
+            } else {
+                if (username.value == "公瑾" && pwd.value == "1018") {
+                    alert("登录成功");
+                    a.href = "";
+                    //转跳的HTML页面需要与当前HTML页面在一个文件夹中   各种图片也是
+                } else {
+                    if (username.value == "user1" && pwd.value == "321") {
+                        a.href = "";
+                        alert("登录成功");
+                    } else {
+                        if (username.value == "user2" && pwd.value == "321") {
+                            a.href = "";
+                            alert("登录成功");
+                        } else {
+                            alert("你无权登录，请联系@公瑾");
+                        }
+                    }
+                    }
+                }
+            }
+
+    </script>
+</body>
+
+</html>
